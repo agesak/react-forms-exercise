@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './SignupForm.css';
 
 const SignupForm = () => {
 
@@ -49,21 +50,24 @@ const SignupForm = () => {
   }
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <form className="signup-form" onSubmit={onFormSubmit}>
+      <section className="signup-form-name-section">
       <label>
-        First name: <input type="text" value={formFields.firstName} onChange={onFirstNameChange} ></input>
+        <input className="first-name" type="text" placeholder="First Name" value={formFields.firstName} onChange={onFirstNameChange} ></input>
       </label>
       <label>
-        Last name: <input type="text" value={formFields.lastName} onChange={onLastNameChange}></input>
+        <input className="last-name" type="text" placeholder="Last Name" value={formFields.lastName} onChange={onLastNameChange}></input>
+      </label>
+      </section>
+      <label>
+        <input className="email" type="text" placeholder="your@email.com" value={formFields.email} onChange={onEmailChange}></input>
       </label>
       <label>
-        Email: <input type="text" value={formFields.email} onChange={onEmailChange}></input>
+        <input className="password" type="text" placeholder="*****" value={formFields.password} onChange={onPasswordChange}></input>
       </label>
+      <span>By creating an account, you agree to our Terms & Conditions</span>
       <label>
-        Password: <input type="text" value={formFields.password} onChange={onPasswordChange}></input>
-      </label>
-      <label>
-        Create Account: <input type="submit"></input>
+        <input className="submit-button" type="submit" value="Create Account"></input>
       </label>
     </form>
   )
